@@ -14,6 +14,22 @@
     "start": "cd server && NODE_ENV=production node server.js"
   },
   "author": "Amy Tai",
-  "license": "",
-  "dependencies": {}
-}
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules",
+    "server/node_modules"
+  ],
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "react-grid-system": "^7.1.1",
+    "react-router-dom": "^5.2.0"
+  },
+    "postinstall": "cd server && npm install && cd .. && cd react-ui && npm install",
+    "start:dev": "start npm run --prefix server start && start npm run --prefix react-ui start",
+    "heroku-postbuild": "npm run --prefix react-ui build",
+    "start": "cd server && NODE_ENV=production node server.js"
+  }
+
