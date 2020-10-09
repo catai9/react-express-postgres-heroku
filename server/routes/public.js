@@ -4,7 +4,7 @@ const authenticateHandler = require('../models/handlers/authenticate');
 
 const router = express.Router();
 
-router.get('/api/user-verification', async(req, res) => {
+router.get('/api/login', async(req, res) => {
     const email = req.query.email;
     const password = req.query.password;
 
